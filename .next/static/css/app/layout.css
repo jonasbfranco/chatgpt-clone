@@ -1,6 +1,6 @@
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: '__Inter_aaf875';
@@ -569,20 +569,26 @@ video {
 .fixed {
   position: fixed;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .left-0 {
   left: 0px;
 }
 .top-0 {
   top: 0px;
 }
-.bottom-0 {
-  bottom: 0px;
+.-ml-96 {
+  margin-left: -24rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .ml-0 {
   margin-left: 0px;
 }
-.-ml-96 {
-  margin-left: -24rem;
+.mr-3 {
+  margin-right: 0.75rem;
 }
 .flex {
   display: flex;
@@ -590,11 +596,26 @@ video {
 .h-10 {
   height: 2.5rem;
 }
+.h-96 {
+  height: 24rem;
+}
 .h-screen {
   height: 100vh;
 }
 .min-h-screen {
   min-height: 100vh;
+}
+.w-0 {
+  width: 0px;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-16 {
+  width: 4rem;
+}
+.w-64 {
+  width: 16rem;
 }
 .w-full {
   width: 100%;
@@ -602,11 +623,8 @@ video {
 .w-screen {
   width: 100vw;
 }
-.w-0 {
-  width: 0px;
-}
-.w-10 {
-  width: 2.5rem;
+.flex-1 {
+  flex: 1 1 0%;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -620,32 +638,69 @@ video {
 .justify-center {
   justify-content: center;
 }
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.border {
+  border-width: 1px;
+}
+.border-t {
+  border-top-width: 1px;
+}
+.border-gray-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+.border-white\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
 .bg-gpt-gray {
   --tw-bg-opacity: 1;
   background-color: rgb(52 53 65 / var(--tw-bg-opacity));
 }
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
 .bg-gray-600\/75 {
   background-color: rgb(75 85 99 / 0.75);
 }
-.bg-slate-50 {
+.bg-gray-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 .bg-red-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
-.bg-blue-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+.p-2 {
+  padding: 0.5rem;
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-200 {
+  transition-duration: 200ms;
 }
 
 :root {
@@ -672,10 +727,33 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+::-webkit-scrollbar {
+  width: .5rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(217, 217, 227, .8);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.hover\:bg-gray-500\/20:hover {
+  background-color: rgb(107 114 128 / 0.2);
+}
+
 @media (min-width: 768px) {
 
   .md\:static {
     position: static;
+  }
+
+  .md\:ml-0 {
+    margin-left: 0px;
   }
 
   .md\:hidden {
@@ -686,4 +764,3 @@ body {
     width: 16rem;
   }
 }
-
