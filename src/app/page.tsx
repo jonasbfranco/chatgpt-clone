@@ -1,11 +1,14 @@
 "use client"
 
+import { ChatArea } from "@/components/ChatArea";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
+import { Chat } from "@/types/Chat";
 import { useState } from "react";
 
 const Page = () => {
   const [sidebarOpened, setSidebarOpened] = useState(false);
+  const [chatActive, setChatActive] = useState<Chat>();
 
   const openSidebar = () => setSidebarOpened(true);
   const closeSidebar = () => setSidebarOpened(false);
@@ -39,6 +42,8 @@ const Page = () => {
           title={`Bla bla bla`}
           newChatClick={handleNewChat}
         />
+
+        <ChatArea chat={chatActive} />
 
       </section>
     </main>
