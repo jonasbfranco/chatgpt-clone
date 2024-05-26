@@ -21,6 +21,8 @@ export const Header = ({ openSidebarClick, title, newChatClick }: Props) => {
                 <IconAdd width={24} height={24}/>
             </div>
 
+            
+
         </header>
     );
 }
