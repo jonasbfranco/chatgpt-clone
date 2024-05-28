@@ -1,19 +1,23 @@
 import { Chat } from "@/types/Chat";
 import { ChatPlaceholder } from "./ChatPlaceholder";
+import { ChatMessageItem } from "./ChatMessageItem";
 
 type Props = {
     chat: Chat | undefined;
+    loading: boolean;
 }
 
-export const ChatArea = ({ chat }: Props) => {
+export const ChatArea = ({ chat, loading }: Props) => {
     return (
-        <section className="flex-auto h-0 overflow-scroll">
+        <section className="flex-auto h-0 overflow-y-scroll">
             { !chat && <ChatPlaceholder />}
             { chat && chat.messages.map(item => (
-                <div>
-                    ...
-                </div>
+                <ChatMessageItem 
+                    key={item.id}
+                    item={item}
+                />
             ))}
+            {loading && <ChatMessageLoading />}
         </section>
     );
 }
