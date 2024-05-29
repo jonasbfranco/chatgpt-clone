@@ -1,6 +1,7 @@
 import { Chat } from "@/types/Chat";
 import { ChatPlaceholder } from "./ChatPlaceholder";
 import { ChatMessageItem } from "./ChatMessageItem";
+import { ChatMessageLoading } from "./ChatMessageLoading";
 
 type Props = {
     chat: Chat | undefined;

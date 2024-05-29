@@ -87,7 +87,7 @@ useEffect(() => {
           newChatClick={handleNewChat}
         />
 
-        <ChatArea chat={chatActive} />
+        <ChatArea chat={chatActive} loading={AILoading}/>
 
         <Footer 
           onSendMessage={handleSendMessage}
