@@ -8,6 +8,7 @@ import { Chat } from "@/types/Chat";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ChatMessage } from '../types/ChatMessage';
+import { SidebarChatButton } from "@/components/SidebarChatButton";
 
 const Page = () => {
   const [sidebarOpened, setSidebarOpened] = useState(false);
@@ -86,6 +87,18 @@ useEffect(() => {
     SetAILoading(true);
   }
 
+  const handleSelectChat = (id: string) => {
+    setChatActiveId(id);
+  }
+
+  const handleDeleteChat = (id: string) => {
+    setChatActiveId(id);
+  }
+
+  const handleEditChat = (id: string) => {
+    setChatActiveId(id);
+  }
+
   return (
     <main className="flex min-h-screen bg-gpt-gray">
       <Sidebar
@@ -98,9 +111,10 @@ useEffect(() => {
       {chatList.map(item => (
         <SidebarChatButton 
           key={item.id}
-          chatIem={item}
+          chatItem={item}
           active={item.id === chatActiveId}
-          onClick={handleDeleteChat}
+          onClick={handleSelectChat}
+          onDelete={handleDeleteChat}
           onEdit={handleEditChat}
         />
       ))}
