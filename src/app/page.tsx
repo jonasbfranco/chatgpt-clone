@@ -7,6 +7,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { Chat } from "@/types/Chat";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { ChatMessage } from '../types/ChatMessage';
 
 const Page = () => {
   const [sidebarOpened, setSidebarOpened] = useState(false);
@@ -19,9 +20,28 @@ useEffect(() => {
   setChatActive(chatList.find(item => item.id === chatActiveId));
 }, [chatActiveId, chatList]);
 
+useEffect(() => {
+  if (AILoading) getAIResponse();
+},[AILoading]);
+
   const openSidebar = () => setSidebarOpened(true);
   const closeSidebar = () => setSidebarOpened(false);
   
+  const getAIResponse = () => {
+    setTimeout(() => {
+      let chatlistClone = [...chatList];
+      let chatIndex = chatlistClone.findIndex(item => item.id === chatActiveId);
+      if (chatIndex > -1) {
+        chatlistClone[chatIndex].messages.push({
+          id: uuidv4(),
+          author: 'ai',
+          body: 'Aqui vai a resposta da AI :)'
+        });
+        setChatList(chatlistClone);
+        SetAILoading(false);
+      }
+    }, 2000)
+  }
 
   const handleClearConversations = () => {
     if (AILoading) return;
@@ -75,7 +95,15 @@ useEffect(() => {
         onNewChat={handleNewChat}
       >
 
-      ...
+      {chatList.map(item => (
+        <SidebarChatButton 
+          key={item.id}
+          chatIem={item}
+          active={item.id === chatActiveId}
+          onClick={handleDeleteChat}
+          onEdit={handleEditChat}
+        />
+      ))}
 
       </Sidebar>
 
@@ -83,7 +111,7 @@ useEffect(() => {
         
         <Header 
           openSidebarClick={openSidebar}
-          title={`Bla bla bla`}
+          title={chatActive ? chatActive.title : 'Nova conversa'}
           newChatClick={handleNewChat}
         />
 
