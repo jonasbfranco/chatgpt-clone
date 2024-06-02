@@ -1,4 +1,4 @@
-// File: C:\Users\jonas.franco\OneDrive - NARDINI AGROINDUSTRIAL LTDA\Downloads\chatgpt-clone\src\app\layout.tsx
+// File: C:\Users\jonas\Downloads\chatgpt-clone\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

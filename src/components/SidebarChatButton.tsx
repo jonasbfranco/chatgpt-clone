@@ -32,6 +32,9 @@ export const SidebarChatButton = ({ chatItem, active, onClick, onDelete, onEdit 
         if(editing && titleInput.trim() !== '') {
             onEdit(chatItem.id, titleInput.trim());
         }
+
+        setDeleting(false);
+        setEditing(false);
     }
 
     const handleCancelButton = () => {
